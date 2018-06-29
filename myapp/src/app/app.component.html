@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+      
+  </head>
+  <div class="panel col-md-3 col-lg-6">
+  <div class= "panel panel-heading">
+<form class="form-control">
+<input type="text"
+ #userData
+ placeholder="search here"
+ (keyup)="Search(userData.value)"
+>
+</form>
+
+<!-- <table  class="table table-bordered table-responsive">
+    <tr>
+<ul  *ngIf="user" class="list-inline">
+
+        <td>username</td>
+        <td>id</td>
+        <td>avatar</td>
+  
+      <li>{{user.login}}</li>
+      <li>{{user.id}}</li>
+      <li><img [src]="user.avatar_url" class="img-responsive img-circle"></li>  
+    </ul>
+</tr>
+
+
+<!-- <h1>Followers:</h1> -->
+<!-- <tr>
+<ul *ngFor ="let follower of followers">
+  <h6>Followers:</h6>
+  <li>{{follower.login}}</li>
+  <li><img [src]="follower.avatar_url"></li>
+</ul>
+</tr> 
+</table>-->
+
+<table class="table table-bordered table-responsive">
+  <tr>
+  <th>USERNAME</th>
+  <th>ID</th>
+  <th>AVATAR</th>
+</tr>
+
+<tr *ngIf="user" class="success">
+  <td>{{user.login}}</td>
+  <td>{{user.id}}</td>
+  <td><img [src]="user.avatar_url" class="img-responsive img-circle"></td>  
+</tr>
+<tr class="info">FOLLOWERS OF {{user.login}}</tr>
+
+<tr *ngFor="let follower of followers" class="danger">  
+<td>{{follower.login}}</td>
+<td>{{follower.id}}</td>
+<td><img [src]="follower.avatar_url" class="img-responsive img-circle"></td>
+</tr>
+
+</table>
+</div>
+
